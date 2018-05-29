@@ -1,0 +1,26 @@
+{
+  "name": "supports.js",
+  "version": "1.0.0",
+  "description": "A fast, lightweight and modular feature-detection library",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx babel src --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "feature",
+    "detection",
+    "browser",
+    "support",
+    "api"
+  ],
+  "author": "Beau August",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}
