@@ -1,32 +1,26 @@
 (function() {
+  var checkArgs = function(testType, args) {
+    if (!args.length) throw new Error('supports.one expects an array of tests');
+    var tests = [];
+    var i;
+    for (i = 0; i < args.length; i++) {
+      if (args[i] === 'each' || args[i] === 'one') break;
+      if (supports[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
+      tests.push(supports[args[i]]);
+    }
+    return tests[testType](function(el) {
+      return el;
+    });
+  };
+
   var supports = {
 
     one: function(args) {
-      if (!args.length) throw new Error('supports.one expects an array of tests');
-      var tests = [];
-      var i;
-      for (i = 0; i < args.length; i++) {
-        if (args[i] === 'each') break;
-        if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
-        tests.push(this[args[i]]);
-      }
-      return tests.some(function(el) {
-        return el;
-      });
+      return checkArgs('some', args);
     },
 
     each: function(args) {
-      if (!args.length) throw new Error('supports.each expects an array of tests');
-      var tests = [];
-      var i;
-      for (i = 0; i < args.length; i++) {
-        if (args[i] === 'each') break;
-        if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
-        tests.push(this[args[i]]);
-      }
-      return tests.every(function(el) {
-        return el;
-      });
+      return checkArgs('every', args);      
     },
 
     canvas: !!window.HTMLCanvasElement,
@@ -44,6 +38,8 @@
     geolocation: 'geolocation' in navigator,
 
     history: 'pushState' in window.history,
+
+    intl: 'Intl' in window,
 
     matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
 

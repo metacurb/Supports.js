@@ -62,6 +62,7 @@ supports.fetch
 supports.filereader
 supports.geolocation
 supports.history
+supports.intl
 supports.matchmedia
 supports.serviceworkers
 supports.touchevents
