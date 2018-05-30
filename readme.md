@@ -54,44 +54,19 @@ supports.each(['geolocation', 'touchevents', 'canvas']);
 ### Properties:
 
 ```javascript
-// Element.classList - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 supports.classlist
-
-// DeviceMotionEvent - https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent
 supports.devicemotion
-
-// DeviceOrientationEvent - https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent
 supports.deviceorientation
-
-// Fetch API - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 supports.fetch
-
-// FileReader - https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 supports.filereader
-
-// Geolocation - https://developer.mozilla.org/en-US/docs/Web/API/Geolocation
 supports.geolocation
-
-// History - https://developer.mozilla.org/en-US/docs/Web/API/History
 supports.history
-
-// Internationalization - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 supports.intl
-
-// matchMedia - https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
 supports.matchmedia
-
-// serviceWorker - https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker
 supports.serviceworkers
-
-// Touch events - https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
 supports.touchevents
-
-// WebGL - https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
 supports.webgl
 supports.webgl2
-
-// Web Workers - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
 supports.webworkers
 ```
 > ***NOTE** Supports.js checks to see if Touch events are supported within a device browser. It relies on the browser to detect if touch support is available. It does **NOT** check to see if the device itself is a touch device.*
