@@ -1,11 +1,11 @@
 (function() {
   var checkArgs = function(testType, args) {
-    if (!args.length) throw new Error('supports.one expects an array of tests');
+    if (!args.length || !Array.isArray(args)) throw new Error('supports.' + testType + '() - Expected an array');
     var tests = [];
     var i;
     for (i = 0; i < args.length; i++) {
       if (args[i] === 'each' || args[i] === 'one') break;
-      if (supports[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
+      if (supports[args[i]] === undefined) throw new Error('supports.' + testType + '() could not find property \'' + args[i]+ '\'');
       tests.push(supports[args[i]]);
     }
     return tests[testType](function(el) {
@@ -15,11 +15,11 @@
 
   var supports = {
 
-    one: function(args) {
+    some: function(args) {
       return checkArgs('some', args);
     },
 
-    each: function(args) {
+    every: function(args) {
       return checkArgs('every', args);      
     },
 
