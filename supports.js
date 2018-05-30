@@ -1,5 +1,19 @@
 window.supports = {
 
+  one: function(args) {
+    if (!args.length) throw new Error('supports.one expects an array of tests');
+    var tests = [];
+    var i;
+    for (i = 0; i < args.length; i++) {
+      if (args[i] === 'each') break;
+      if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
+      tests.push(this[args[i]]);
+    }
+    return tests.some(function(el) {
+      return el;
+    });
+  },
+
   each: function(args) {
     if (!args.length) throw new Error('supports.each expects an array of tests');
     var tests = [];

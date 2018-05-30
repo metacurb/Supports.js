@@ -31,13 +31,21 @@ if (supports.touchevents) {
 
 ### Methods:
 
+#### supports.one(args)
+* `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
+* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if at least one feature in the array is supported.
+
+Example:
+```javascript
+supports.one(['websqldatabase', 'sessionstorage', 'localstorage']);
+```
 #### supports.each(args)
 * `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
 * returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if every feature in the array is supported.
 
 Example:
 ```javascript
-supports.each(['websqldatabase', 'sessionstorage', 'localstorage']);
+supports.each(['geolocation', 'touchevents', 'canvas']);
 ```
 
 ### Properties:
