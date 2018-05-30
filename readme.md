@@ -49,8 +49,12 @@ supports.localstorage
 supports.queryselectorall
 supports.sessionstorage
 supports.touchevents
+supports.webgl
 supports.websqldatabase
+supports.webworkers
 ```
+> ***NOTE** Supports.js checks to see if touchEvents are supported within a device browser. It relies on the browser to detect if touch support is available. It does **NOT** check to see if the device itself is a touch device.*
+
 ## License 
 
 Supports.js uses the [MIT license](https://opensource.org/licenses/MIT)
