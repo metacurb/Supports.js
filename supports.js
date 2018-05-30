@@ -23,8 +23,6 @@
       return checkArgs('every', args);      
     },
 
-    canvas: !!window.HTMLCanvasElement,
-
     classlist: 'classList' in document.documentElement,
 
     deviceMotion : ('DeviceMotionEvent' in window),
@@ -63,8 +61,6 @@
       var canvas = document.createElement('canvas');
       return !!canvas.getContext('webgl2');
     })(),
-
-    websqldatabase: 'openDatabase' in window,
 
     webworkers: 'Worker' in window,
   };
