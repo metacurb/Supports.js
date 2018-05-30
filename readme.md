@@ -61,6 +61,7 @@ supports.deviceorientation
 supports.fetch
 supports.filereader
 supports.geolocation
+supports.history
 supports.matchmedia
 supports.serviceworkers
 supports.touchevents

@@ -43,6 +43,8 @@
 
     geolocation: 'geolocation' in navigator,
 
+    history: 'pushState' in window.history,
+
     matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
 
     serviceworkers: (function() {
