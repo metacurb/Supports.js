@@ -45,11 +45,9 @@
 
     matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
 
-    queryselectorall: !!document.querySelectorAll,
-
-    serviceWorker : function() {
+    serviceworkers: (function() {
       return 'serviceWorker' in navigator;
-    },
+    })(),
     
     touchevents: !!(
       ('ontouchstart' in window) ||

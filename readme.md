@@ -39,7 +39,7 @@ if (supports.touchevents) {
 
 Example:
 ```javascript
-supports.one(['websqldatabase', 'sessionstorage', 'localstorage']);
+supports.one(['websqldatabase', 'webworkers', 'serviceworker']);
 ```
 
 #### supports.each(args)
@@ -62,6 +62,7 @@ supports.fetch
 supports.filereader
 supports.geolocation
 supports.matchmedia
+supports.serviceworkers
 supports.touchevents
 supports.webgl
 supports.webgl2
