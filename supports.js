@@ -45,6 +45,8 @@ window.supports = {
     }
   })(),
 
+  matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
+
   queryselectorall: !!document.querySelectorAll,
 
   sessionstorage: (function() {

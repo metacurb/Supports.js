@@ -4,9 +4,15 @@
   "description": "A fast, lightweight and dependency-free feature-detection library",
   "main": "supports.js",
   "scripts": {
-    "minify": "npx babel supports.js --out-file supports.min.js",
-    "prepublish": "npm run build"
+    "lint": "eslint index.js --cache --ignore-pattern .gitignore",
+    "build:min": "npx babel supports.js --out-file supports.min.js",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "lint",
+    "build:min"
+  ],
   "keywords": [
     "browser",
     "detect",
@@ -23,6 +29,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.4.3",
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "pre-commit": "^1.2.2"
   }
 }

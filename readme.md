@@ -1,5 +1,5 @@
 # ⚡ Supports.js
-> Supports.js is a fast, lightweight and dependency-free feature-detection library. It's the best way to check a user's browser for those features that your latest projects need.
+> Supports.js is a fast, lightweight and dependency-free feature-detection library. It's the best way to check a user's browser for those features that your latest projects make use of.
 
 ## Getting Started
 
@@ -10,7 +10,7 @@
 ```
 ```javascript
 if (supports.touchevents) {
-  ...
+  console.log('Touch events supported');
 }
 ```
 
@@ -23,7 +23,7 @@ $ npm i Supports.js
 import supports from 'Supports.js';
 
 if (supports.touchevents) {
-  ...
+  console.log('Touch events supported');
 }
 ```
 
@@ -33,15 +33,16 @@ if (supports.touchevents) {
 
 #### supports.one(args)
 * `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
-* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if at least one feature in the array is supported.
+* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if ***at least one*** feature in the array is supported by the browser.
 
 Example:
 ```javascript
 supports.one(['websqldatabase', 'sessionstorage', 'localstorage']);
 ```
+
 #### supports.each(args)
 * `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
-* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if every feature in the array is supported.
+* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if ***every*** feature in the array is supported by the browser.
 
 Example:
 ```javascript
@@ -49,11 +50,13 @@ supports.each(['geolocation', 'touchevents', 'canvas']);
 ```
 
 ### Properties:
+
 ```javascript
 supports.canvas
 supports.fetch
 supports.geolocation
 supports.localstorage
+supports.matchmedia
 supports.queryselectorall
 supports.sessionstorage
 supports.touchevents
@@ -61,7 +64,7 @@ supports.webgl
 supports.websqldatabase
 supports.webworkers
 ```
-> ***NOTE** Supports.js checks to see if touchEvents are supported within a device browser. It relies on the browser to detect if touch support is available. It does **NOT** check to see if the device itself is a touch device.*
+> ***NOTE** Supports.js checks to see if Touch events are supported within a device browser. It relies on the browser to detect if touch support is available. It does **NOT** check to see if the device itself is a touch device.*
 
 ## License 
 
