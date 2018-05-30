@@ -1,78 +1,82 @@
-window.supports = {
+(function() {
+  var supports = {
 
-  one: function(args) {
-    if (!args.length) throw new Error('supports.one expects an array of tests');
-    var tests = [];
-    var i;
-    for (i = 0; i < args.length; i++) {
-      if (args[i] === 'each') break;
-      if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
-      tests.push(this[args[i]]);
-    }
-    return tests.some(function(el) {
-      return el;
-    });
-  },
+    one: function(args) {
+      if (!args.length) throw new Error('supports.one expects an array of tests');
+      var tests = [];
+      var i;
+      for (i = 0; i < args.length; i++) {
+        if (args[i] === 'each') break;
+        if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
+        tests.push(this[args[i]]);
+      }
+      return tests.some(function(el) {
+        return el;
+      });
+    },
 
-  each: function(args) {
-    if (!args.length) throw new Error('supports.each expects an array of tests');
-    var tests = [];
-    var i;
-    for (i = 0; i < args.length; i++) {
-      if (args[i] === 'each') break;
-      if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
-      tests.push(this[args[i]]);
-    }
-    return tests.every(function(el) {
-      return el;
-    });
-  },
+    each: function(args) {
+      if (!args.length) throw new Error('supports.each expects an array of tests');
+      var tests = [];
+      var i;
+      for (i = 0; i < args.length; i++) {
+        if (args[i] === 'each') break;
+        if (this[args[i]] === undefined) throw new Error('Support test not found: ' + args[i]);
+        tests.push(this[args[i]]);
+      }
+      return tests.every(function(el) {
+        return el;
+      });
+    },
 
-  canvas: !!window.HTMLCanvasElement,
+    canvas: !!window.HTMLCanvasElement,
 
-  fetch: 'fetch' in window,
+    classlist: 'classList' in document.documentElement,
 
-  geolocation: 'geolocation' in navigator,
+    deviceMotion : ('DeviceMotionEvent' in window),
 
-  localstorage: (function() {
-    var sjs = 'Supports.js';
-    try {
-      localStorage.setItem(sjs, sjs);
-      localStorage.removeItem(sjs);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  })(),
+    deviceOrientation : ('DeviceOrientationEvent' in window),
 
-  matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
+    fetch: 'fetch' in window,
 
-  queryselectorall: !!document.querySelectorAll,
+    filereader: !!window.FileReader,
 
-  sessionstorage: (function() {
-    var sjs = 'Supports.js';
-    try {
-      sessionStorage.setItem(sjs, sjs);
-      sessionStorage.removeItem(sjs);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  })(),
+    geolocation: 'geolocation' in navigator,
 
-  touchevents: !!(
-    ('ontouchstart' in window) ||
-    window.navigator && window.navigator.msPointerEnabled && window.MSGesture ||
-    window.DocumentTouch && document instanceof DocumentTouch
-  ),
+    matchmedia: !!('matchMedia' in window || 'msMatchMedia' in window),
 
-  webgl: (function() {
-    var canvas = document.createElement('canvas');
-    var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    return !!(gl && gl instanceof WebGLRenderingContext);
-  })(),
+    queryselectorall: !!document.querySelectorAll,
 
-  websqldatabase: 'openDatabase' in window,
+    serviceWorker : function() {
+      return 'serviceWorker' in navigator;
+    },
+    
+    touchevents: !!(
+      ('ontouchstart' in window) ||
+      window.navigator && window.navigator.msPointerEnabled && window.MSGesture ||
+      window.DocumentTouch && document instanceof DocumentTouch
+    ),
 
-  webworkers: 'Worker' in window,
-};
+    webgl: (function() {
+      var canvas = document.createElement('canvas');
+      var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      return !!(gl && gl instanceof WebGLRenderingContext);
+    })(),
+
+    webgl2: (function() {
+      var canvas = document.createElement('canvas');
+      return !!canvas.getContext('webgl2');
+    })(),
+
+    websqldatabase: 'openDatabase' in window,
+
+    webworkers: 'Worker' in window,
+  };
+
+  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = supports;
+  }
+  else {
+    window.supports = supports;
+  }
+})();

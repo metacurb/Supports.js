@@ -1,6 +1,8 @@
 # ⚡ Supports.js
 > Supports.js is a fast, lightweight and dependency-free feature-detection library. It's the best way to check a user's browser for those features that your latest projects make use of.
 
+The aim of Supports.js is to make feature-detection quick and painless. Import what you need, and leave the rest. Everything returns a Boolean, for ease-of-use.
+
 ## Getting Started
 
 ### In the browser
@@ -33,7 +35,7 @@ if (supports.touchevents) {
 
 #### supports.one(args)
 * `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
-* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if ***at least one*** feature in the array is supported by the browser.
+* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> `true` if ***at least one*** feature in the array is supported by the browser.
 
 Example:
 ```javascript
@@ -42,7 +44,7 @@ supports.one(['websqldatabase', 'sessionstorage', 'localstorage']);
 
 #### supports.each(args)
 * `args` <[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)<[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)>>
-* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> Checking if ***every*** feature in the array is supported by the browser.
+* returns: <[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)> `true` if ***every*** feature in the array is supported by the browser.
 
 Example:
 ```javascript
@@ -53,14 +55,16 @@ supports.each(['geolocation', 'touchevents', 'canvas']);
 
 ```javascript
 supports.canvas
+supports.classlist
+supports.devicemotion
+supports.deviceorientation
 supports.fetch
+supports.filereader
 supports.geolocation
-supports.localstorage
 supports.matchmedia
-supports.queryselectorall
-supports.sessionstorage
 supports.touchevents
 supports.webgl
+supports.webgl2
 supports.websqldatabase
 supports.webworkers
 ```
