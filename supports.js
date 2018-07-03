@@ -1,6 +1,6 @@
 (function() {
   var checkArgs = function(testType, args) {
-    if (!args.length || !Array.isArray(args)) throw new Error('supports.' + testType + '() - Expected an array');
+    if (!args.length || !Array.isArray(args)) throw new Error('supports.' + testType + '() expects an array');
     var tests = [];
     var i;
     for (i = 0; i < args.length; i++) {

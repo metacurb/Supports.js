@@ -8,7 +8,7 @@ The aim of Supports.js is to make feature-detection quick and painless. Import w
 ### In the browser
 
 ```html
-<script src="supports.min.js"></script>
+<script src="//unpkg.com/supports.js/supports.min.js"></script>
 ```
 ```javascript
 if (supports.touchevents) {
@@ -19,10 +19,10 @@ if (supports.touchevents) {
 ### Using npm
 
 ```shell
-$ npm i Supports.js
+$ npm i supports.js
 ```
 ```javascript
-import supports from 'Supports.js';
+import supports from 'supports.js';
 
 if (supports.touchevents) {
   console.log('Touch events supported');

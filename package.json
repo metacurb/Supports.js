@@ -1,6 +1,6 @@
 {
   "name": "supports.js",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "A fast, lightweight and dependency-free feature-detection library",
   "main": "supports.js",
   "scripts": {

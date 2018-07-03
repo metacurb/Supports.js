@@ -2,7 +2,7 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["ie >= 10", "safari >= 7"]
+        "browsers": ["ie >= 9", "safari >= 7"]
       }
     }],
     "minify"
