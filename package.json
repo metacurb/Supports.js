@@ -3,6 +3,9 @@
   "version": "0.5.0",
   "description": "A fast, lightweight and dependency-free feature-detection library",
   "main": "supports.js",
+  "homepage": "https://beauagst.github.io/Supports.js/",
+  "repository": "github:BeauAgst/Supports.js",
+  "bugs": "https://github.com/BeauAgst/Supports.js/issues",
   "scripts": {
     "lint": "eslint index.js --cache --ignore-pattern .gitignore",
     "build:min": "npx babel supports.js --out-file supports.min.js",
@@ -15,12 +18,16 @@
   ],
   "keywords": [
     "browser",
+    "compatibility",
     "detect",
     "detection",
+    "dom-api",
+    "fast",
     "feature",
     "feature detection",
     "support",
-    "supported"
+    "supported",
+    "zero-dependency"
   ],
   "author": "Beau August",
   "license": "MIT",
